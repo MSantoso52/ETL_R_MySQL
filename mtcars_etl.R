@@ -5,8 +5,8 @@ library(DBI)
 con <- dbConnect(
   RMySQL::MySQL(),
   dbname = "cars",
-  username = "mulyo",
-  password = "Hasegawa@053",
+  username = "*****",
+  password = "*****",
   host = "localhost",
   port = 3306,
   options = "--local-infile"
