@@ -12,9 +12,23 @@ To follow along with this project, you will need:
   R --version
 ETL using R are following below steps:
 1. Load necessary library -- RMySQL, DBI
-2. Create connection with local MySQL -- passing dbname, host, user, password, port
-3. Extract (E) -- using R dataset
-4. Transform (T) -- passing data into R variable
-5. Load (L) -- write data into MySQL database
-6. Load (L) -- write data into csv file
-7. Close the connection 
+   ```R
+   library(RMySQL)
+   library(DBI)
+3. Create connection with local MySQL -- passing dbname, host, user, password, port
+   ```R
+   # create MySQL connection
+   con <- dbConnect(
+    RMySQL::MySQL(),
+    dbname = "cars",
+    username = "*****",
+    password = "*****",
+    host = "localhost",
+    port = 3306,
+    options = "--local-infile"
+   )
+5. Extract (E) -- using R dataset
+6. Transform (T) -- passing data into R variable
+7. Load (L) -- write data into MySQL database
+8. Load (L) -- write data into csv file
+9. Close the connection 
