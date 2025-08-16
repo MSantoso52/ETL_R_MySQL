@@ -28,7 +28,22 @@ ETL using R are following below steps:
     options = "--local-infile"
    )
 5. Extract (E) -- using R dataset
-6. Transform (T) -- passing data into R variable
-7. Load (L) -- write data into MySQL database
-8. Load (L) -- write data into csv file
-9. Close the connection 
+   ```R
+   # extract data
+   data(mtcars)
+7. Transform (T) -- passing data into R variable
+   ```R
+   # transform data
+   mtcars_transformed <- mtcars
+9. Load (L) -- write data into MySQL database
+    ```R
+    # transform data
+    mtcars_transformed <- mtcars
+11. Load (L) -- write data into csv file
+    ```R
+    # write data into csv
+    write.csv(mtcars_transformed, "mtcars.csv")
+13. Close the connection
+    ```R
+    # disconnect database
+    dbDisconnect(con)
